@@ -1,0 +1,734 @@
+<!doctype html>
+<!--
+╔════════════════════════════════════════════════════════════════════╗
+║                 GGO MERCH WEBSITE — EASY-EDIT VERSION             ║
+╚════════════════════════════════════════════════════════════════════╝
+
+GOOD NEWS: These notes are HTML comments, so visitors NEVER see them.
+This is your existing website: same design, wording, prices, galleries, links.
+
+HOW TO EDIT SAFELY IN VS CODE:
+  1. Press Ctrl+F and search for "EDIT 01", "EDIT 02", etc.
+  2. Change ONLY the words between the opening > and closing < tags.
+  3. Never delete class="...", id="...", data-..., href="...", or tags.
+  4. Don't edit the CSS or gallery JavaScript unless you mean to change
+     the design or behavior.
+  5. Save, refresh index.html in a browser, and test the order link.
+
+MOST USEFUL EDITS:
+  EDIT 01 — Browser tab title and description
+  EDIT 02 — Navigation labels
+  EDIT 03 — Mobile header text
+  EDIT 04 — Club intro / meeting information
+  EDIT 05 — T-shirt title, price, and descriptions
+  EDIT 06 — T-shirt color selector text / availability note
+  EDIT 07 — Hoodie title, price, descriptions, color notes
+  EDIT 08 — Stickers / can cooler / pins titles and prices
+  EDIT 09 — Order section wording
+  EDIT 10 — Footer wording / social button labels
+  EDIT 11 — Link URLs (inside the LINKS configuration)
+  EDIT 12 — Mockup color labels and file names (JavaScript config)
+  EDIT 13 — Supplier color palette labels (JavaScript config)
+
+PRICE NOTE: Some prices appear more than once in the HTML. If you
+change one, use Ctrl+F to update every occurrence of that price.
+
+YOUR FOLDERS (DON'T RENAME THEM):
+    Merch/index.html
+    Merch/stuff/ggo-merch-header.png
+    Merch/mockups/ (all clothing/accessory mockups and stickers)
+
+For extra directions, see EDITING-GUIDE.txt in this download.
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ===================================================================
+     EDIT 01: BROWSER TAB & PAGE DESCRIPTION
+     Edit only the words inside content="..." or between <title>...</title>.
+     =================================================================== -->
+  <meta name="description" content="Browse GGO merchandise and support the Northeastern Illinois University Geography & GIS Organization.">
+  <title>GGO @ NEIU </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+
+<!-- ===== DO NOT EDIT UNLESS CHANGING THE VISUAL DESIGN =====
+     CSS: fonts, colors, spacing, responsive layout. None of these lines
+     need changes to edit the writing on your website.
+     ============================================================= -->
+  <style>
+:root { --navy:#24476A; --green:#3C7A6B; --pale:#F4F9F7; --ink:#1C3647; }
+html { scroll-behavior:smooth; scroll-padding-top:76px; }
+body { background:#fff; color:var(--ink); font-family:Verdana, Arial, sans-serif; }
+a { color:#125c92; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid #f2c94c!important; outline-offset:2px; }
+.navbar { background:var(--navy); box-shadow:0 3px 15px #16364c26; }
+.navbar .nav-link { color:#e8f0f5; }
+.navbar .nav-link:hover { color:#fff; text-decoration:underline; text-underline-offset:.3em; }
+.navbar-brand { letter-spacing:.02em; } .brand-subtitle { font-weight:400; }
+.nav-order-link { background:var(--green); padding:.45rem .9rem!important; border-radius:8px; color:white!important; }
+.banner-area { background:#fff; } .banner-image { display:block; width:100%; height:auto; }
+.mobile-hero { background:linear-gradient(135deg,#e8f5f4,#c8e5ed); color:var(--navy); }
+.intro-section { border-bottom:1px solid #e3ece9; } .intro-copy { max-width:810px; font-size:1.05rem; line-height:1.7; }
+.section-heading h2 { color:var(--navy); } .alt-section { background:var(--pale); }
+.catalog-section { scroll-margin-top:60px; }
+.product-card { border:1px solid #dce7e4; border-radius:16px; box-shadow:0 7px 28px #24476a12; overflow:hidden; }
+.price-pill { display:inline-flex; align-items:center; border-radius:18px; padding:.4rem .8rem; background:#e3f2eb; color:#205c4d; font-size:1.1rem; font-weight:700; white-space:nowrap; }
+.small-pill { font-size:.95rem; padding:.25rem .6rem; }
+.product-gallery-area { padding:1rem; background:#f7fafb; border-right:1px solid #e7edee; }
+.gallery-topline { padding:0 .25rem .65rem; }
+.color-tabs { display:flex; flex-wrap:wrap; gap:.4rem; padding:0 .15rem .8rem; }
+.tee-tab { display:inline-flex; align-items:center; gap:.4rem; background:white; border:1px solid #cfdcd9; padding:.42rem .75rem; border-radius:999px; font-size:.82rem; font-weight:600; color:var(--ink); }
+.tee-tab:hover { background:#edf7f3; } .tee-tab[aria-selected="true"] { border-color:var(--green); background:#dceee6; box-shadow:0 0 0 2px #3c7a6b22; }
+.color-dot { width:15px; height:15px; border-radius:50%; display:inline-block; border:1px solid #808f90; flex-shrink:0; }
+.carousel-frame { background:#eaf1f3; border-radius:12px; overflow:hidden; }
+.carousel-item .media-shell { min-height:405px; }
+.carousel-control-prev, .carousel-control-next { width:13%; }
+.carousel-control-prev-icon, .carousel-control-next-icon { background-color:#24476add; border-radius:50%; background-size:53%; width:39px; height:39px; }
+.carousel-view-label { position:absolute; bottom:.7rem; left:50%; transform:translateX(-50%); padding:.25rem .75rem; background:#ffffffea; color:var(--navy); border-radius:100px; font-size:.8rem; font-weight:bold; box-shadow:0 1px 8px #1d2f3330; white-space:nowrap; }
+.media-shell { position:relative; background:linear-gradient(145deg,#e8f2f5,#f9fbfb); aspect-ratio:4/4.5; display:grid; place-items:center; }
+.media-shell img { display:block; width:100%; height:100%; object-fit:contain; background:#f6f8fa; }
+.media-shell .missing-image { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.5rem; text-align:center; padding:1.5rem; min-height:270px; font-size:.91rem; color:#506b78; border:2px dashed #c4d9da; border-radius:10px; margin:1rem; }
+.media-shell .missing-image strong { font-size:1.2rem; color:var(--navy); }
+.media-shell .missing-image code { font-size:.75rem; overflow-wrap:anywhere; }
+.media-shell.has-image .missing-image { display:none; }
+.media-shell > img { position:absolute; inset:0; }
+.gallery-footnote { margin:.7rem .25rem .15rem; }
+.tee-copy h3 { color:var(--navy); }
+.info-row { display:flex; align-items:center; justify-content:space-between; padding:.7rem 0; border-bottom:1px solid #e8eeed; gap:1rem; }
+.info-row span { color:#516874; }
+.palette-area { background:white; }
+.palette-count { font-weight:normal; font-size:.78rem; color:#627b81; }
+.search-wrap { width:min(100%,265px); } .search-wrap input { border-color:#b8ccca; }
+.selected-color-bar { border-radius:10px; padding:.65rem .85rem; background:#f0f7f5; }
+#copyStatus { color:#256548; }
+.palette-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:.45rem; max-height:375px; overflow-y:auto; padding:.3rem; border:1px solid #e6eceb; border-radius:10px; background:#fcfefd; }
+.palette-item { display:flex; align-items:center; text-align:left; background:#fff; color:var(--ink); border:1px solid #e3e9e6; border-radius:9px; min-height:47px; gap:.5rem; padding:.4rem .48rem; font-size:.73rem; line-height:1.23; overflow-wrap:anywhere; }
+.palette-item:hover { background:#edf5f0; border-color:#80ab9d; }
+.palette-item[aria-pressed="true"] { background:#e2f2eb; border-color:#357e65; box-shadow:inset 0 0 0 1px #357e65; }
+.palette-item .color-dot { width:23px; height:23px; flex-shrink:0; }
+.availability-note { background:#f4f8f7; border-left:3px solid var(--green); padding:.85rem 1rem; color:#344e58; border-radius:0 7px 7px 0; }
+.product-image { width:100%; height:auto; aspect-ratio:4/4.5; object-fit:contain; background:#f7faf9; }
+#hoodieGallery .card .media-shell, #extras .card .media-shell { aspect-ratio:4/4.5; }
+.order-section { background:var(--green); color:white; }
+footer { background:var(--navy); color:#e9f3f4; }
+.disabled-link { opacity:.72; cursor:not-allowed!important; pointer-events:none; }
+.skip-link:focus { position:fixed; top:0; left:0; padding:.5rem; background:white; z-index:2000; }
+@media(max-width:1200px) { .palette-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media(max-width:768px) { .palette-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .product-gallery-area { border-right:0; border-bottom:1px solid #e7edee; } .carousel-item .media-shell { min-height:315px; } }
+@media(max-width:520px) { .palette-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .intro-copy { font-size:.97rem; } .carousel-item .media-shell { min-height:265px; } .product-gallery-area { padding:.65rem; } .color-tabs { gap:.3rem; } .tee-tab { font-size:.76rem; padding:.4rem .58rem; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Version 5: shorter T-shirt section and correctly sized photos */
+.tee-compact { background:linear-gradient(140deg,#fcfefe,#f5f9f8); }
+.tee-gallery-layout { display:grid; grid-template-columns:minmax(0, 430px) minmax(0, 1fr); gap:1.4rem; align-items:center; }
+.tee-photo-wrap { position:relative; max-width:430px; width:100%; }
+.tee-media { aspect-ratio: 4 / 3; height:320px; width:100%; background:#edf2f3; border:1px solid #dae6e7; border-radius:12px; overflow:hidden; }
+.tee-media > img { width:100%; height:100%; object-fit:contain; position:absolute; inset:0; background:#f7f8f8; }
+.tee-media .missing-image { min-height:0; height:82%; width:calc(100% - 2rem); }
+.photo-arrow { position:absolute; top:50%; transform:translateY(-50%); border:0; border-radius:50%; width:38px; height:38px; font-weight:bold; color:white; background:#24476ad9; box-shadow:0 2px 10px #0003; z-index:2; }
+.photo-arrow:hover { background:var(--navy); }
+.photo-prev { left:.55rem; } .photo-next { right:.55rem; }
+.tee-info h3 { color:var(--navy); }
+.view-btn.active-view { background:var(--navy); color:#fff; border-color:var(--navy); }
+.palette-disclosure { background:#fff; }
+.palette-summary { cursor:pointer; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.5rem; color:var(--navy); list-style-position:inside; }
+.palette-summary:hover { background:#f5f9f7; }
+.palette-disclosure[open] .palette-summary { border-bottom:1px solid #e1e9e8; }
+.palette-disclosure .palette-area { padding-top:1rem!important; }
+.palette-disclosure .palette-grid { max-height:265px; }
+#hoodieGallery .media-shell { max-height:305px; aspect-ratio:4/3; }
+#extras .media-shell, #extras .product-image { max-height:315px; aspect-ratio:4/3; object-fit:contain; }
+#extras .product-image { background:#f7faf9; }
+@media (max-width:767px) {
+  .tee-gallery-layout { grid-template-columns:1fr; gap:1rem; }
+  .tee-photo-wrap { max-width:none; }
+  .tee-media { height:285px; }
+  .tee-info { padding:.25rem .3rem; }
+}
+
+/* V6 refinements: narrower layout, shorter shirt card, softer image fallback. */
+.tee-media { height:245px; }
+.tee-gallery-layout { grid-template-columns:minmax(0, 360px) minmax(0,1fr); gap:1.1rem; }
+.tee-photo-wrap { max-width:360px; }
+.tee-info .small { line-height:1.45; }
+.color-tabs { padding-bottom:.55rem; }
+.catalog-section { scroll-margin-top:70px; }
+#hoodieGallery .media-shell { max-height:265px; }
+#extras .media-shell, #extras .product-image { max-height:280px; }
+img[hidden] { display:none!important; }
+@media (max-width:767px) { .tee-gallery-layout { grid-template-columns:1fr; gap:.65rem; } .tee-photo-wrap { max-width:100%; } .tee-media { height:235px; } }
+
+</style>
+<!-- ===== END OF STYLING (CSS) ===== -->
+</head>
+<body>
+<a class="visually-hidden-focusable skip-link" href="#main">Skip to merchandise</a>
+
+<!-- ===================================================================
+     EDIT 02: NAVIGATION BAR
+     Only edit visible names such as T-Shirts, Hoodies, Accessories, Order Form.
+     =================================================================== -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#top">Top <span class="brand-subtitle">of Page</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-md-center gap-md-2">
+        <li class="nav-item"><a class="nav-link" href="#shirts">T-Shirts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#hoodies">Hoodies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#extras">Accessories</a></li>
+        <li class="nav-item"><a class="nav-link nav-order-link disabled-link" data-link="form" aria-disabled="true">Order Form</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================================================================
+     EDIT 03: HEADER / MOBILE TITLE
+     Desktop banner is an image in stuff/. Mobile text can be edited below.
+     =================================================================== -->
+<header id="top" class="banner-area">
+  <div class="container-fluid px-0 d-none d-md-block">
+    <img class="banner-image" id="siteBanner" src="stuff/ggo-merch-header.png" alt="GGO merchandise banner showing the club logo, maps, NEIU building, and geography-inspired accessories" width="1800" height="200">
+  </div>
+  <div class="container d-md-none mobile-hero py-4 text-center">
+    <h1 class="h3 fw-bold mb-1">GGO Merch</h1>
+    <p class="mb-0 small">Geography & GIS Organization • NEIU</p>
+  </div>
+</header>
+
+<!-- ===================================================================
+     PAGE —: MAIN WEBSITE CONTENT BEGINS
+     Sections below are in the same order visitors see them.
+     =================================================================== -->
+<main id="main">
+  <h1 class="visually-hidden">NEIU GGO Merchandise</h1>
+
+<!-- ===================================================================
+     EDIT 04: ABOUT GGO / MEETING DETAILS
+     Change the paragraph copy; keep the <strong> tags around emphasized text.
+     =================================================================== -->
+  <section class="intro-section py-4" aria-label="About GGO">
+    <div class="container">
+      <!-- EDIT THIS PARAGRAPH: club description, time, room number.
+           Don't delete the <strong> opening/closing tags. -->
+      <p class="intro-copy mx-auto mb-0 text-center">We’re students at Northeastern Illinois University who share an interest in geography and Geographic Information Systems (GIS). Join us every Thursday from <strong>3–4 p.m. in BBH 202!</strong> Looking for GGO merchandise? You’re in the right place!</p>
+    </div>
+  </section>
+
+
+<!-- ===================================================================
+     EDIT 05: T-SHIRT PRODUCT CARD
+     Edit the title, price, product subtitle, and size blurb.
+     =================================================================== -->
+  <section id="shirts" class="catalog-section py-4">
+    <div class="container">
+      <!-- EDITABLE: T-shirt name, one-line description, and the $22 price -->
+      <div class="section-heading d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-3">
+        <div><h2 class="h2 fw-bold mb-1">Cute T-shirt</h2><p class="small text-secondary mb-0">Bella + Canvas 3001 • copy the color you love for the order form</p></div>
+        <span class="price-pill">$22</span>
+      </div>
+      <article class="card product-card tee-card overflow-hidden">
+        <div class="tee-compact p-3">
+          <!-- EDITABLE: short T-shirt gallery description and size line -->
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+            <span class="small fw-semibold">Just a few options...     •     It'll look so good on you!</span>
+            <span class="small text-secondary">Available in XS–5XL*</span>
+          </div>
+          <div class="color-tabs" id="teeColorTabs" role="tablist" aria-label="Choose a sample shirt color"></div>
+          <div class="tee-gallery-layout">
+            <div class="tee-photo-wrap">
+              <div class="media-shell tee-media" id="teePhotoShell">
+                <div class="missing-image" id="teeMissing">Add your shirt mockup to the <code>mockups</code> folder</div>
+              </div>
+              <button class="photo-arrow photo-prev" type="button" id="teePrev" aria-label="Previous shirt image">&#10094;</button>
+              <button class="photo-arrow photo-next" type="button" id="teeNext" aria-label="Next shirt image">&#10095;</button>
+            </div>
+            <!-- EDITABLE: small T-shirt gallery instructions.
+                 The current color name is updated automatically by JavaScript. -->
+            <div class="tee-info">
+              <h3 class="h5 fw-bold mb-2" id="currentTeeColor">Ocean Blue</h3>
+              <p class="small text-secondary mb-3">Choose a photo view:</p>
+              <div class="view-options d-flex flex-wrap gap-2" id="teeViewButtons" aria-label="Choose photo angle"></div>
+              <p class="small text-secondary mt-3 mb-1">Mockups show four sample colors. See the complete color selection below.</p>
+              <p class="small text-secondary mb-0">*Not all colors are offered in every size.</p>
+            </div>
+          </div>
+        </div>
+
+<!-- ===================================================================
+     EDIT 06: T-SHIRT COLOR BROWSER & NOTES
+     Edit section labels and notices; leave IDs, details/summary tags, and color grid alone.
+     =================================================================== -->
+        <details class="palette-disclosure border-top" id="shirtPaletteDetails">
+          <!-- EDITABLE: expandable palette heading (currently 89).
+               If number of colors changes, update the number here. -->
+          <summary class="palette-summary px-3 px-md-4 py-3"><strong>Browse a bunch of different T-shirt colors</strong><span class="small text-secondary">Color names, search and selection</span></summary>
+          <div class="palette-area p-3 p-md-4 border-top">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+            <div>
+              <h3 class="h5 mb-1">T-Shirt Color Options <span class="palette-count" id="paletteTotal"></span></h3>
+              <p class="small text-secondary mb-0">These are the options on Printful. Each swatch includes the color name for your order form.</p>
+            </div>
+            <div class="search-wrap"><label class="visually-hidden" for="colorSearch">Search shirt colors</label><input class="form-control form-control-sm" type="search" id="colorSearch" placeholder="Search color names…" autocomplete="off"></div>
+          </div>
+          <div class="selected-color-bar d-flex align-items-center flex-wrap gap-2" aria-live="polite"><span class="small text-secondary">Selected color:</span><strong id="selectedColorName">None yet</strong><button class="btn btn-outline-secondary btn-sm" id="copyColorBtn" type="button" disabled>Copy color name</button><span class="small" id="copyStatus" role="status"></span></div>
+          <div class="palette-grid mt-3" id="colorPalette" aria-label="All listed T-shirt colors"></div>
+          <p id="paletteEmpty" class="small text-secondary mt-3 mb-0" hidden>No colors match that search.</p>
+          <!-- EDITABLE: T-shirt disclaimer and availability wording -->
+          <p class="availability-note small mb-0 mt-3"><strong>Please note:</strong> Mockups are shown for selected colors only. Swatches are approximate on-screen representations, and actual garment colors may vary. Not every color is available in every size or printing configuration. We will confirm availability before finalizing your order.</p>
+          <p class="small mb-0 mt-2"><a href="https://www.printful.com/custom/brands/bella-canvas/unisex-staple-t-shirt-bella-canvas-3001" target="_blank" rel="noopener noreferrer">See the Printful product and size guide ↗</a></p>
+          </div>
+        </details>
+      </article>
+    </div>
+  </section>
+
+
+<!-- ===================================================================
+     EDIT 07: HOODIES / COLOR OPTIONS
+     Hoodie $36 is shown in the section heading and each of three mockup cards.
+     =================================================================== -->
+  <section id="hoodies" class="catalog-section alt-section py-4">
+    <div class="container">
+      <!-- EDITABLE: hoodie title/subtitle and main price; the cards below also show $36. -->
+      <div class="section-heading d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-3"><div><h2 class="h2 fw-bold mb-1">Super Cozy Hoodies</h2><p class="small text-secondary mb-0">Bella + Canvas so they are soft on the inside!  •   Mockups shown in black, white, and lilac.</p></div><span class="price-pill">$36</span></div>
+      <!-- HOODIE PHOTO CARDS — filenames/data-image are code, visible names and prices are editable. -->
+      <div class="row g-3" id="hoodieGallery">
+        <div class="col-12 col-md-4"><article class="card product-card h-100"><div class="media-shell" data-image="Hoodie1.png" data-alt="Black GGO hoodie"><div class="missing-image">Add <code>Hoodie1.png</code></div></div><div class="card-body"><h3 class="h6 fw-bold">Black</h3><p class="small text-secondary mb-0">GGO hoodie • $36</p></div></article></div>
+        <div class="col-12 col-md-4"><article class="card product-card h-100"><div class="media-shell" data-image="Hoodie2.png" data-alt="White GGO hoodie"><div class="missing-image">Add <code>Hoodie2.png</code></div></div><div class="card-body"><h3 class="h6 fw-bold">White</h3><p class="small text-secondary mb-0">GGO hoodie • $36</p></div></article></div>
+        <div class="col-12 col-md-4"><article class="card product-card h-100"><div class="media-shell" data-image="Hoodie3.png" data-alt="Lilac GGO hoodie"><div class="missing-image">Add <code>Hoodie3.png</code></div></div><div class="card-body"><h3 class="h6 fw-bold">Lilac</h3><p class="small text-secondary mb-0">GGO hoodie • $36</p></div></article></div>
+      </div>
+      <!-- HOODIE PALETTE — edit visible text, leave color grid ID in place -->
+      <div class="card product-card mt-4">
+        <div class="palette-area p-3 p-md-4">
+          <h3 class="h5 mb-1">Hoodie Color Options <span class="palette-count" id="hoodiePaletteTotal"></span></h3>
+          <p class="small text-secondary mb-3">These are the colors listed by Printful. The swatches are approximate. </p>
+          <div class="selected-color-bar d-flex align-items-center flex-wrap gap-2" aria-live="polite">
+            <span class="small text-secondary">Selected hoodie color:</span>
+            <strong id="selectedHoodieColorName">None yet</strong>
+            <button class="btn btn-outline-secondary btn-sm" type="button" id="copyHoodieColorBtn" disabled>Copy color name</button>
+            <span class="small" id="hoodieCopyStatus" role="status"></span>
+          </div>
+          <div class="palette-grid mt-3" id="hoodieColorPalette" aria-label="All listed hoodie colors"></div>
+          <p class="availability-note small mb-0 mt-3"><strong>Please note:</strong> Only three colors have sample mockups. Screen colors may vary, and availability depends on your chosen size and print setup. We'll confirm color and size availability before finalizing your order.</p>
+          <p class="small mb-0 mt-2"><a href="https://www.printful.com/custom/brands/bella-canvas/unisex-pullover-hoodie-bella-canvas-3719" target="_blank" rel="noopener noreferrer">See the Printful hoodie and size guide ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ===================================================================
+     EDIT 08: STICKERS, CAN COOLERS, AND PINS
+     Each product is a separate card; change only headings, descriptions, and prices.
+     =================================================================== -->
+  <section id="extras" class="catalog-section py-4">
+    <div class="container">
+      <h2 class="h2 fw-bold mb-3">Stickers & Accessories</h2>
+      <div class="row g-3">
+        <!-- EDITABLE PRODUCT CARD 1: Sticker sheet — currently $10 -->
+        <div class="col-12 col-sm-6 col-lg-4"><article class="card product-card h-100"><img class="product-image" id="stickerImage" src="mockups/stickersheet.png" alt="GGO five-design sticker collection with globe, maps, GIS layers, and BBH illustrations" loading="lazy"><div class="card-body"><div class="d-flex justify-content-between align-items-start gap-2"><h3 class="h5 fw-bold">Sticker Sheet w/ 5 unique designs</h3><span class="price-pill small-pill">$10</span></div><p class="small text-secondary mb-0">All five GGO designs together on one geography themed sheet. Perfect for your laptop or water bottle!</p><div class="d-flex flex-wrap gap-2 mt-3" role="group" aria-label="Sticker sheet photos"><button type="button" class="btn btn-sm btn-outline-secondary accessory-view active-view" data-sticker-view="stickersheet" aria-pressed="true">Sticker sheet</button><button type="button" class="btn btn-sm btn-outline-secondary accessory-view" data-sticker-view="stickersmockup" aria-pressed="false">Styled mockup</button></div></div></article></div>
+        <!-- EDITABLE PRODUCT CARD 2: Can cooler — currently $5 -->
+        <div class="col-12 col-sm-6 col-lg-4"><article class="card product-card h-100"><div class="media-shell" id="coolerPhoto" data-image="CanCooler1.png" data-alt="GGO can cooler"><div class="missing-image">Add <code>CanCooler1.png</code></div></div><div class="card-body"><div class="d-flex justify-content-between align-items-start gap-2"><h3 class="h5 fw-bold">Can Cooler</h3><span class="price-pill small-pill">$5</span></div><p class="small text-secondary mb-0">GGO logo can cooler.</p><div class="d-flex flex-wrap gap-2 mt-3" role="group" aria-label="Can cooler photos"><button type="button" class="btn btn-sm btn-outline-secondary accessory-view active-view" data-cooler-view="CanCooler1" aria-pressed="true">In hand</button><button type="button" class="btn btn-sm btn-outline-secondary accessory-view" data-cooler-view="CanCooler2" aria-pressed="false">Product view</button></div></div></article></div>
+        <!-- EDITABLE PRODUCT CARD 3: Pins — currently $2, mockup still a placeholder -->
+       <div class="col-12 col-sm-6 col-lg-4">
+  <article class="card product-card h-100">
+    <div class="media-shell" data-image="pin1.png" data-alt="GGO pin mockup featuring the NEIU eagle and GGO logo">
+      <div class="missing-image">Add <code>pin1.png</code></div>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <h3 class="h5 fw-bold">GGO Pins</h3>
+        <span class="price-pill small-pill">$2</span>
+      </div>
+      <p class="small text-secondary mb-0">Small pin-back button featuring the NEIU eagle and GGO logo.</p>
+    </div>
+  </article>
+</div>
+	   </div>
+    </div>
+  </section>
+
+
+<!-- ===================================================================
+     EDIT 09: ORDER FORM CALL-TO-ACTION
+     Change the title and description. The actual URL is in EDIT 11 below.
+     =================================================================== -->
+  <section id="order" class="py-5 order-section">
+    <div class="container text-center"><h2 class="h3 fw-bold mb-2">Ready to order?</h2><p class="mb-3">Browse here, then send your product, color, and size choices through our Google order form.</p><a class="btn btn-light fw-bold px-4 disabled-link" data-link="form" aria-disabled="true">Google order form coming soon</a></div>
+  </section>
+</main>
+
+<!-- ===================================================================
+     EDIT 10: FOOTER AND SOCIAL BUTTON LABELS
+     Buttons keep working if you change only their visible names.
+     =================================================================== -->
+<footer class="py-4"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"><p class="mb-0 small">NEIU Geography & GIS Organization • GGO</p><div class="d-flex flex-wrap justify-content-center gap-2 social-links"><a class="btn btn-outline-light btn-sm" data-link="instagram" href="https://www.instagram.com/gis_neiu/" target="_blank" rel="noopener noreferrer">Instagram</a><a class="btn btn-outline-light btn-sm" data-link="connect" href="https://neiu.campusgroups.com/feeds?type=club&amp;type_id=35546&amp;tab=about" target="_blank" rel="noopener noreferrer">NEIU Connect</a><a class="btn btn-outline-light btn-sm" data-link="discord" href="https://discord.gg/zTfUBWYkK" target="_blank" rel="noopener noreferrer">Discord</a></div></div></footer>
+
+<!-- ===== LEAVE THIS BOOTSTRAP LIBRARY REFERENCE ALONE ===== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+<!-- ===================================================================
+     JAVASCRIPT: GALLERIES, COLOR SELECTION, IMAGE LOADING, LINK BUTTONS
+     Edit the small configuration lists only when changing a URL,
+     sample color name, image filename, or supplier color option.
+     The rest is the working code: leave it alone.
+     =================================================================== -->
+<script>
+"use strict";
+
+/* ====================================================================
+   EDIT 11 — LINKS: GOOGLE FORM + SOCIAL ACCOUNTS
+   Safe to change: only the URL inside each pair of quotation marks.
+   Keep form:, instagram:, connect:, and discord: and their commas.
+   ==================================================================== */
+/* GGO MERCH CONFIGURATION — the only links you'll usually need to edit. */
+const LINKS = {
+  form: "https://docs.google.com/forms/d/e/1FAIpQLSemfkaWl0XANqBKHoNayAJr0bZ7XZ-h0FlmTFX5t1t1eEnl-w/viewform?usp=publish-editor",       // Google Form responder link: https://docs.google.com/forms/d/e/.../viewform
+  instagram: "https://www.instagram.com/gis_neiu/",  // GGO Instagram URL
+  connect: "https://neiu.campusgroups.com/feeds?type=club&type_id=35546&tab=about",    // NEIU Connects club URL
+  discord: "https://discord.gg/zTfUBWYkK"     // GGO Discord invite URL
+};
+
+/* ====================================================================
+   EDIT 12 — SAMPLE SHIRT MOCKUP LABELS / FILENAMES
+   Safe to change: label: "..." if the displayed mockup name changes.
+   Change prefix ONLY when changing the underlying image filenames.
+   Current folder: mockups/Shirt1_front.png etc.
+   ==================================================================== */
+/* One T-shirt style, four photographed colors, three photos each.
+   If the color-to-file match differs from your Printful downloads, adjust here.
+   Files belong in mockups/ beside index.html.
+   The filenames are case-sensitive on GitHub Pages. */
+const TEE_MOCKUPS = [
+  { label: "Ocean Blue", color: "#8DBAD1", prefix: "Shirt1" },
+  { label: "Heather Emerald", color: "#1E2C1C", prefix: "Shirt2" },
+  { label: "White", color: "#FFFFFF", prefix: "Shirt3" },
+  { label: "Soft Pink", color: "#F2B9DC", prefix: "Shirt4" }
+];
+const TEE_VIEWS = [
+  { label: "Front", suffix: "front" },
+  { label: "Back", suffix: "back" },
+  { label: "Angled", suffix: "angle" }
+];
+
+/* ====================================================================
+   EDIT 13A — SUPPLIER T-SHIRT COLOR LIST
+   IMPORTANT: Each entry is ["supplier color name", "approximate hex"].
+   Update only if Printful's actual color offerings change.
+   Matching names must agree with the Google order form.
+   ==================================================================== */
+/* Bella + Canvas 3001 color names retained from the site's original list.
+   Where names match the user's Bella 3001 chart, screen swatches have been
+   sampled from that reference image. Other screen swatches are approximate.
+   The chart labels two distinct swatches "Ocean Blue"; the first is used here.
+   Heather Emerald uses #1E2C1C from the user's Printful hover tooltip.
+   These sampled HEX codes are NOT official manufacturer fabric color codes.
+   Confirm colors and size combinations on Printful before taking orders. */
+const TEE_COLORS = [
+  ["Aqua", "#0798C5"], ["Army", "#494539"], ["Ash", "#CACBCF"],
+  ["Asphalt", "#565656"], ["Athletic Heather", "#aeb3b7"], ["Autumn", "#AF552E"],
+  ["Baby Blue", "#a7cee5"], ["Berry", "#C04770"], ["Black", "#000000"],
+  ["Black Heather", "#34383e"], ["Brown", "#4D3C31"], ["Burnt Orange", "#EC8D6A"],
+  ["Cardinal", "#6F1D21"], ["Charity Pink", "#EF7D9F"], ["Dark Grey", "#525359"],
+  ["Dark Grey Heather", "#64646a"], ["Deep Heather", "#777a80"], ["Forest", "#2E4940"],
+  ["Gold", "#FEBD09"], ["Heather Aqua", "#a6d7d4"], ["Heather Autumn", "#ba755f"],
+  ["Heather Brown", "#9d7b72"], ["Heather Cardinal", "#a26373"], ["Heather Carolina Blue", "#8eb6d1"],
+  ["Heather Clay", "#bfa19b"], ["Heather Columbia Blue", "#acccde"], ["Heather Deep Teal", "#44707b"],
+  ["Heather Dust", "#dad0c5"], ["Heather Dusty Blue", "#8e9fb3"], ["Heather Emerald", "#1E2C1C"],
+  ["Heather Forest", "#516b5b"], ["Heather Grass Green", "#77a36e"], ["Heather Ice Blue", "#d9e4e7"],
+  ["Heather Kelly", "#3c916d"], ["Heather Mauve", "#c1a1aa"], ["Heather Midnight Navy", "#354455"],
+  ["Heather Mint", "#b9d9ca"], ["Heather Natural", "#e9e3d8"], ["Heather Navy", "#5e7083"],
+  ["Heather Olive", "#85836c"], ["Heather Orange", "#df9872"], ["Heather Orchid", "#b49bba"],
+  ["Heather Prism Dusty Blue", "#c5d0e1"], ["Heather Prism Ice Blue", "#e4edf1"], ["Heather Prism Lilac", "#e9dcec"],
+  ["Heather Prism Mint", "#d5e9de"], ["Heather Prism Peach", "#f5dacb"], ["Heather Raspberry", "#bc668c"],
+  ["Heather Red", "#BA4340"], ["Heather Slate", "#758594"], ["Heather Stone", "#bab7b2"],
+  ["Heather Team Purple", "#75698c"], ["Heather True Royal", "#5d89c0"], ["Heather Yellow Gold", "#e8bd71"],
+  ["Kelly", "#055633"], ["Leaf", "#507643"], ["Light Blue", "#a7d7ee"],
+  ["Lilac", "#C99BB5"], ["Maroon", "#5F262E"], ["Mauve", "#C07B7C"],
+  ["Military Green", "#51543D"], ["Mint", "#B9E4C6"], ["Mustard", "#DF9824"],
+  ["Natural", "#F5EAD4"], ["Navy", "#092A4C"], ["Ocean Blue", "#8DBAD1"],
+  ["Olive", "#51553D"], ["Orange", "#EE6435"], ["Oxblood Black", "#321f29"],
+  ["Pebble", "#9b8e79"], ["Pink", "#FFB6C7"], ["Red", "#BA2B27"],
+  ["Sage", "#8B9A8B"], ["Silver", "#C0C0C0"], ["Soft Cream", "#EAD8B4"],
+  ["Soft Pink", "#F2B9DC"], ["Solid Black Blend", "#262628"], ["Solid White Blend", "#f8f8f7"],
+  ["Steel Blue", "#5F6670"], ["Tan", "#D4C2AE"], ["Teal", "#44C2B6"],
+  ["Team Purple", "#3C2865"], ["Toast", "#C27A3F"], ["True Royal", "#094AC3"],
+  ["Turquoise", "#2ab7d0"], ["Vintage Black", "#53565a"], ["Vintage White", "#f4f0e7"],
+  ["White", "#FFFFFF"], ["Yellow", "#F9E471"]
+];
+
+/* ====================================================================
+   EDIT 13B — SUPPLIER HOODIE COLOR LIST
+   Same rule as above: ["color name", "approximate screen color"].
+   ==================================================================== */
+/* Hoodie colors shown in the supplied Printful screenshot, matched to
+   the Bella + Canvas 3719 names published by Printful. The lilac option is
+   pink-toned in the sample mockup. Swatch hex values are approximate. */
+const HOODIE_COLORS = [
+  ["Black", "#141414"],
+  ["Black Heather", "#262626"],
+  ["Maroon", "#62212d"],
+  ["Forest", "#1d3929"],
+  ["Heather Navy", "#343949"],
+  ["Team Purple", "#56336a"],
+  ["Heather Forest", "#414e4c"],
+  ["True Royal", "#3052b4"],
+  ["Athletic Heather", "#b9b9b9"],
+  ["Lilac", "#f0b1cc"],
+  ["White", "#ffffff"]
+];
+
+// ======================================================================
+// WORKING JAVASCRIPT BELOW — DON'T CHANGE FOR ORDINARY TEXT EDITS
+// This code controls navigation links, images, photo galleries, and swatches.
+// ======================================================================
+// Enable the three socials immediately. Google Forms activates when you add its URL.
+document.querySelectorAll("[data-link]").forEach(link => {
+  const url = LINKS[link.dataset.link];
+  if (url && /^https:\/\//i.test(url)) {
+    link.href = url;
+    link.classList.remove("disabled-link");
+    link.removeAttribute("aria-disabled");
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    if (link.dataset.link === "form") link.textContent = "Open Google Order Form ↗";
+  }
+});
+
+// Filename resolver: accepts png, jpg, jpeg, webp and common capitalization.
+// All paths are relative to index.html and work on local disk AND GitHub Pages.
+function mockupPaths(stem) {
+  const clean = stem.replace(/\.(png|jpe?g|webp)$/i, "");
+  const extensions = ["png", "jpg", "jpeg", "webp", "PNG", "JPG", "JPEG", "WEBP"];
+  return extensions.map(ext => `mockups/${clean}.${ext}`);
+}
+function loadImage(img, urls, slot=null) {
+  let i = 0;
+  // Hidden lazy-loaded images may never be fetched by the browser.
+  // Load these small merchandise galleries eagerly so the onload event can reveal them.
+  img.loading = "eager";
+  img.hidden = true;
+  if (slot) slot.classList.remove("has-image");
+  img.onload = () => {
+    img.hidden = false;
+    if (slot) slot.classList.add("has-image");
+  };
+  img.onerror = () => {
+    i++;
+    if (i < urls.length) img.src = encodeURI(urls[i]);
+    else { img.hidden = true; if(slot) slot.classList.remove("has-image"); }
+  };
+  img.src = encodeURI(urls[0]);
+}
+
+// Banner and sticker sheet include built-in image fallbacks for reliable previews.
+const siteBanner = document.getElementById("siteBanner");
+loadImage(siteBanner, ["stuff/ggo-merch-header.png", "stuff/ggo-merch-header.PNG", "stuff/GGO Merch Header.png"]);
+const stickerImage = document.getElementById("stickerImage");
+loadImage(stickerImage, [...mockupPaths("stickersheet"), ...mockupPaths("stickersmockup"), ...mockupPaths("stickermockup")]);
+
+// Load all other merchandise from the user's existing mockups folder.
+document.querySelectorAll("[data-image]").forEach(slot => {
+  const img = document.createElement("img");
+  img.alt = slot.dataset.alt || "GGO merchandise mockup";
+  img.loading = "lazy";
+  slot.prepend(img);
+  loadImage(img, mockupPaths(slot.dataset.image), slot);
+});
+
+// Compact shirt gallery: four color tabs and three views per color.
+const teeTabs = document.getElementById("teeColorTabs");
+const teeViews = document.getElementById("teeViewButtons");
+const teePhotoShell = document.getElementById("teePhotoShell");
+const teePhoto = document.createElement("img");
+teePhoto.alt = "";
+teePhoto.loading = "eager";
+teePhotoShell.prepend(teePhoto);
+let teeColorIndex = 0;
+let teeViewIndex = 0;
+
+TEE_MOCKUPS.forEach((tee, index) => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "tee-tab";
+  button.id = `tee-tab-${index}`;
+  button.setAttribute("role", "tab");
+  const dot = document.createElement("span");
+  dot.className = "color-dot";
+  dot.style.backgroundColor = tee.color;
+  dot.setAttribute("aria-hidden", "true");
+  button.append(dot, document.createTextNode(tee.label));
+  button.addEventListener("click", () => { teeColorIndex = index; teeViewIndex = 0; updateTeeGallery(); });
+  teeTabs.append(button);
+});
+TEE_VIEWS.forEach((view, index) => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "btn btn-sm btn-outline-secondary view-btn";
+  button.textContent = view.label;
+  button.addEventListener("click", () => { teeViewIndex = index; updateTeeGallery(); });
+  teeViews.append(button);
+});
+function updateTeeGallery() {
+  const tee = TEE_MOCKUPS[teeColorIndex];
+  const view = TEE_VIEWS[teeViewIndex];
+  document.getElementById("currentTeeColor").textContent = `${tee.label} • ${view.label} view`;
+  teeTabs.querySelectorAll(".tee-tab").forEach((button, index) => {
+    button.setAttribute("aria-selected", String(index===teeColorIndex));
+    button.tabIndex = index===teeColorIndex ? 0 : -1;
+  });
+  teeViews.querySelectorAll("button").forEach((button, index) => {
+    button.classList.toggle("active-view", index===teeViewIndex);
+    button.setAttribute("aria-pressed", String(index===teeViewIndex));
+  });
+  teePhoto.alt = `${tee.label} GGO T-shirt, ${view.label.toLowerCase()} view`;
+  const fallback = document.getElementById("teeMissing");
+  fallback.innerHTML = `Add <strong>${tee.prefix}_${view.suffix}</strong> to your mockups folder`;
+  loadImage(teePhoto, mockupPaths(`${tee.prefix}_${view.suffix}`), teePhotoShell);
+}
+document.getElementById("teePrev").addEventListener("click", () => { teeViewIndex=(teeViewIndex+2)%3; updateTeeGallery(); });
+document.getElementById("teeNext").addEventListener("click", () => { teeViewIndex=(teeViewIndex+1)%3; updateTeeGallery(); });
+let touchStartX=0;
+teePhotoShell.addEventListener("touchstart", e => {touchStartX=e.changedTouches[0].clientX;}, {passive:true});
+teePhotoShell.addEventListener("touchend", e => {
+  const diff=e.changedTouches[0].clientX-touchStartX;
+  if(Math.abs(diff)>40){teeViewIndex=(teeViewIndex+(diff<0?1:2))%3;updateTeeGallery();}
+}, {passive:true});
+updateTeeGallery();
+
+// All colors are individually named, searchable, selectable, and copyable.
+const palette = document.getElementById("colorPalette");
+const search = document.getElementById("colorSearch");
+const selectedColorName = document.getElementById("selectedColorName");
+const copyButton = document.getElementById("copyColorBtn");
+const copyStatus = document.getElementById("copyStatus");
+document.getElementById("paletteTotal").textContent = `(${TEE_COLORS.length} listed)`;
+let selectedColor = "";
+
+function selectColor(name) {
+  selectedColor = name;
+  selectedColorName.textContent = name;
+  copyStatus.textContent = "";
+  copyButton.disabled = false;
+  document.querySelectorAll(".palette-item").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.colorName === name)));
+}
+
+function drawPalette() {
+  const query = search.value.trim().toLocaleLowerCase();
+  const filtered = TEE_COLORS.filter(([name]) => name.toLocaleLowerCase().includes(query));
+  palette.replaceChildren();
+  filtered.forEach(([name, hex]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "palette-item";
+    button.dataset.colorName = name;
+    button.setAttribute("aria-label", `Select color ${name}`);
+    button.setAttribute("aria-pressed", String(name === selectedColor));
+    const dot = document.createElement("span");
+    dot.className = "color-dot";
+    dot.style.backgroundColor = hex;
+    dot.setAttribute("aria-hidden", "true");
+    const label = document.createElement("span");
+    label.textContent = name;
+    button.append(dot, label);
+    button.addEventListener("click", () => selectColor(name));
+    palette.append(button);
+  });
+  document.getElementById("paletteEmpty").hidden = filtered.length > 0;
+}
+search.addEventListener("input", drawPalette);
+copyButton.addEventListener("click", async () => {
+  if (!selectedColor) return;
+  try {
+    await navigator.clipboard.writeText(selectedColor);
+    copyStatus.textContent = "Copied!";
+  } catch (_) {
+    copyStatus.textContent = "Select and copy the name above.";
+  }
+});
+drawPalette();
+
+
+// Hoodie palette: use exact supplier color labels when filling out the order form.
+const hoodiePalette = document.getElementById("hoodieColorPalette");
+const hoodieSelectedName = document.getElementById("selectedHoodieColorName");
+const hoodieCopyButton = document.getElementById("copyHoodieColorBtn");
+const hoodieCopyStatus = document.getElementById("hoodieCopyStatus");
+document.getElementById("hoodiePaletteTotal").textContent = `(${HOODIE_COLORS.length} listed)`;
+let selectedHoodieColor = "";
+HOODIE_COLORS.forEach(([name, hex]) => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "palette-item";
+  button.dataset.hoodieColorName = name;
+  button.setAttribute("aria-label", `Select hoodie color ${name}`);
+  button.setAttribute("aria-pressed", "false");
+  const dot = document.createElement("span");
+  dot.className = "color-dot";
+  dot.style.backgroundColor = hex;
+  dot.setAttribute("aria-hidden", "true");
+  const label = document.createElement("span");
+  label.textContent = name;
+  button.append(dot, label);
+  button.addEventListener("click", () => {
+    selectedHoodieColor = name;
+    hoodieSelectedName.textContent = name;
+    hoodieCopyStatus.textContent = "";
+    hoodieCopyButton.disabled = false;
+    hoodiePalette.querySelectorAll(".palette-item").forEach(item =>
+      item.setAttribute("aria-pressed", String(item.dataset.hoodieColorName === name))
+    );
+  });
+  hoodiePalette.appendChild(button);
+});
+hoodieCopyButton.addEventListener("click", async () => {
+  if (!selectedHoodieColor) return;
+  try {
+    await navigator.clipboard.writeText(selectedHoodieColor);
+    hoodieCopyStatus.textContent = "Copied!";
+  } catch (_) {
+    hoodieCopyStatus.textContent = "Select and copy the name above.";
+  }
+});
+
+
+// Optional second views for the user's existing sticker and can-cooler mockups.
+// The filenames below match the screenshot: stickersheet, stickersmockup, CanCooler1, CanCooler2.
+document.querySelectorAll('[data-sticker-view]').forEach(button => {
+  button.addEventListener('click', () => {
+    const view = button.dataset.stickerView;
+    stickerImage.alt = view === 'stickersheet'
+      ? 'GGO five-design sticker sheet, flat view'
+      : 'GGO five-design sticker sheet shown in a styled product mockup';
+    const options = view === 'stickersmockup'
+      ? [...mockupPaths('stickersmockup'), ...mockupPaths('stickermockup')]
+      : mockupPaths('stickersheet');
+    loadImage(stickerImage, options);
+    document.querySelectorAll('[data-sticker-view]').forEach(item => {
+      const isActive = item === button;
+      item.classList.toggle('active-view', isActive);
+      item.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+});
+const coolerSlot = document.getElementById('coolerPhoto');
+document.querySelectorAll('[data-cooler-view]').forEach(button => {
+  button.addEventListener('click', () => {
+    const view = button.dataset.coolerView;
+    const img = coolerSlot.querySelector('img');
+    img.alt = view === 'CanCooler1' ? 'GGO can cooler held in hand' : 'GGO can cooler standalone product photo';
+    loadImage(img, mockupPaths(view), coolerSlot);
+    document.querySelectorAll('[data-cooler-view]').forEach(item => {
+      const isActive = item === button;
+      item.classList.toggle('active-view', isActive);
+      item.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+});
+
+</script>
+</body></html>
